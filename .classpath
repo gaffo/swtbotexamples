@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="junit"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/org.apache.log4j_1.2.13.v200903072027.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jface_3.5.1.M20090826-0800.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.swtbot.eclipse.core_2.0.0.394-dev-e35.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.swtbot.eclipse.finder_2.0.0.394-dev-e35.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.swtbot.eclipse.spy_2.0.0.394-dev-e35.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.swtbot.eclipse.ui_2.0.0.394-dev-e35.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.swtbot.junit4_x_2.0.0.394-dev-e35.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.swtbot.swt.finder_2.0.0.394-dev-e35.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.core.source_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.integration_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.integration.source_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.library_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.library.source_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.text_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.text.source_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/swt-debug.jar"/>
+	<classpathentry kind="lib" path="lib/swt.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.core.commands_3.5.0.I20090525-2000.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.equinox.common_3.5.1.R35x_v20090807-1100.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.osgi_3.5.1.R35x_v20090827.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.ui.workbench_3.5.1.M20090826-0800a.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
