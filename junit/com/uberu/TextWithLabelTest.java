@@ -20,7 +20,7 @@ public class TextWithLabelTest {
 	private Display display;
 	private String verify1;
 	private String verify2;
-
+	
 	@Test
 	public void testFillingInFieldByLabel() throws Exception {
 		new Thread() {

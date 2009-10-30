@@ -8,7 +8,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swtbot.swt.finder.SWTBot;
@@ -92,9 +91,9 @@ class TextWithIdGui extends Dialog {
 		composite.setLayout(new GridLayout(3, false));
 
 		textField1 = new Text(parent, SWT.BORDER);
-		textField1.setData("textField1");
+		textField1.setData(org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY, "textField1");
 		textField2 = new Text(parent, SWT.BORDER);
-		textField1.setData("textField2");
+		textField1.setData(org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY, "textField2");
 
 		return composite;
 	}
