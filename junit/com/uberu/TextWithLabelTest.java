@@ -91,19 +91,29 @@ class TextWithLabelGui extends Dialog {
 	protected Control createDialogArea(Composite parent) {
 		Composite composite = (Composite) super.createDialogArea(parent);
 
-		composite.setLayout(new GridLayout(3, false));
+		composite.setLayout(new GridLayout(2, false));
 
 		Label textLabel1 = new Label(composite, SWT.NONE);
 		textLabel1.setText("Label Text1");
 
-		textField1 = new Text(parent, SWT.BORDER);
+		textField1 = new Text(composite, SWT.BORDER);
 
 		Label textLabel2 = new Label(composite, SWT.NONE);
 		textLabel2.setText("Label Text2");
 
-		textField2 = new Text(parent, SWT.BORDER);
+		textField2 = new Text(composite, SWT.BORDER);
 
 		return composite;
+	}
+	
+	@Override
+	protected void buttonPressed(int buttonId) {
+		if (buttonId == OK){
+			close();
+		}
+		else{
+			super.buttonPressed(buttonId);
+		}
 	}
 
 }

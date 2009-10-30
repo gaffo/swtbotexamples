@@ -32,25 +32,25 @@ public class TextWithIdTest {
 		final SWTBot bot = new SWTBot();
 		bot.textWithId("textField1").setText("WOOT!");
 		bot.textWithId("textField2").setText("WOOTS!");
-		display.asyncExec(new Runnable() {
-			public void run() {
-				synchronized (bot) {
-					try {
-						System.out.println("in verify");
-						verifyText1();
-						verifyText2();
-						display.dispose();
-					} finally {
-						bot.notify();
-					}
-				}
-			}
-		});
-		synchronized (bot) {
-			bot.wait();
-		}
-		assertEquals("WOOT!", verify1);
-		assertEquals("WOOTS!", verify2);
+//		display.asyncExec(new Runnable() {
+//			public void run() {
+//				synchronized (bot) {
+//					try {
+//						System.out.println("in verify");
+//						verifyText1();
+//						verifyText2();
+//						display.dispose();
+//					} finally {
+//						bot.notify();
+//					}
+//				}
+//			}
+//		});
+//		synchronized (bot) {
+//			bot.wait();
+//		}
+//		assertEquals("WOOT!", verify1);
+//		assertEquals("WOOTS!", verify2);
 	}
 
 	private void verifyText1() {
