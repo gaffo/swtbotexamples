@@ -93,7 +93,7 @@ class TextWithIdGui extends Dialog {
 		textField1 = new Text(parent, SWT.BORDER);
 		textField1.setData(org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY, "textField1");
 		textField2 = new Text(parent, SWT.BORDER);
-		textField1.setData(org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY, "textField2");
+		textField2.setData(org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY, "textField2");
 
 		return composite;
 	}
