@@ -11,36 +11,24 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.swtbot.swt.finder.utils.SWTUtils;
+import org.eclipse.swtbot.swt.finder.widgets.SWTBotText;
 import org.junit.Test;
 
 public class TextWithLabelTest extends SWTBotTestBase {
 
 	private TextWithLabelGui gui;
-	private String verify1;
-	private String verify2;
 
 	@Test
 	public void testFillingInFieldByLabel() throws Exception {
-		getBot().label("Label Text1");
-		getBot().textWithLabel("Label Text1").setText("WOOT!");
-		getBot().label("Label Text2");
-		getBot().textWithLabel("Label Text2").setText("WOOTS!");
-		Display.getDefault().syncExec(new Runnable() {
-			public void run() {
-				verifyText1();
-				verifyText2();
-			}
-		});
-		assertEquals("WOOT!", verify1);
-		assertEquals("WOOTS!", verify2);
-	}
+		SWTBotText textField1 = getBot().textWithLabel("Label Text1");
+		SWTBotText textField2 = getBot().textWithLabel("Label Text2");
+		
+		textField1.setText("WOOT!");
+		textField2.setText("WOOTS!");
 
-	private void verifyText1() {
-		verify1 = gui.getText1Value();
-	}
-
-	private void verifyText2() {
-		verify2 = gui.getText2Value();
+		assertEquals("WOOT!", SWTUtils.invokeMethod(textField1, "getText"));
+		assertEquals("WOOTS!", SWTUtils.invokeMethod(textField2, "getText"));
 	}
 
 	@Override
