@@ -1,0 +1,11 @@
+This project is a full eclipse project containing
+a bunch of examples of using SWTBot with native SWT.
+
+The tests are currently organized as simple GUI unit tests.
+
+Send me mail if you have specific examples you wish to have added
+or pull requests if you have more to be added.
+
+Homeage:
+
+http://github.com/gaffo/swtbotexamples
