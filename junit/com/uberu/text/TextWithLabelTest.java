@@ -1,4 +1,4 @@
-package com.uberu;
+package com.uberu.text;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,6 +14,8 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swtbot.swt.finder.utils.SWTUtils;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotText;
 import org.junit.Test;
+
+import com.uberu.SWTBotTestBase;
 
 public class TextWithLabelTest extends SWTBotTestBase {
 

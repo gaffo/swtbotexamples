@@ -1,4 +1,4 @@
-package com.uberu;
+package com.uberu.text;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,12 +14,14 @@ import org.eclipse.swtbot.swt.finder.utils.SWTUtils;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotText;
 import org.junit.Test;
 
+import com.uberu.SWTBotTestBase;
+
 public class TextWithIdTest extends SWTBotTestBase {
 
 	private TextWithIdGui gui;
 
 	@Test
-	public void testFillingInFieldByLabel() throws Exception {
+	public void testFillingInById() throws Exception {
 		SWTBotText textField1 = getBot().textWithId("textField1");
 		SWTBotText textField2 = getBot().textWithId("textField2");
 		
