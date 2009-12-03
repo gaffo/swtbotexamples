@@ -46,11 +46,12 @@ public class LabelsTest extends SWTBotTestBase {
 		Matcher<Label> matcher = allOf(widgetOfType(Label.class), new TextEndingWith<Label>("contents to check from", new GetTextGetter()));
 		assertEquals(1, getBot().getFinder().findControls(matcher).size());
 	}
-//	
-//	@Test
-//	public void testLabelContaining() throws Exception {
-//		
-//	}
+	
+	@Test
+	public void testLabelContaining() throws Exception {
+		Matcher<Label> matcher = allOf(widgetOfType(Label.class), new TextContaining<Label>("will have text", new GetTextGetter()));
+		assertEquals(1, getBot().getFinder().findControls(matcher).size());
+	}
 //	
 //	@Test
 //	public void testLabelMatchingRegex() throws Exception {
