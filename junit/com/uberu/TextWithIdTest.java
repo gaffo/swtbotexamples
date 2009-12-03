@@ -13,44 +13,25 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swtbot.swt.finder.SWTBot;
 import org.junit.Test;
 
-public class TextWithIdTest {
+public class TextWithIdTest extends SWTBotTestBase {
 
 	private TextWithIdGui gui;
-	private Display display;
 	private String verify1;
 	private String verify2;
 
 	@Test
 	public void testFillingInFieldByLabel() throws Exception {
-		new Thread() {
-			public void run() {
-				display = new Display();
-				gui = new TextWithIdGui(display);
-				gui.open();
-			};
-		}.start();
 		final SWTBot bot = new SWTBot();
 		bot.textWithId("textField1").setText("WOOT!");
 		bot.textWithId("textField2").setText("WOOTS!");
-//		display.asyncExec(new Runnable() {
-//			public void run() {
-//				synchronized (bot) {
-//					try {
-//						System.out.println("in verify");
-//						verifyText1();
-//						verifyText2();
-//						display.dispose();
-//					} finally {
-//						bot.notify();
-//					}
-//				}
-//			}
-//		});
-//		synchronized (bot) {
-//			bot.wait();
-//		}
-//		assertEquals("WOOT!", verify1);
-//		assertEquals("WOOTS!", verify2);
+		Display.getDefault().syncExec(new Runnable() {
+			public void run() {
+				verifyText1();
+				verifyText2();
+			}
+		});
+		assertEquals("WOOT!", verify1);
+		assertEquals("WOOTS!", verify2);
 	}
 
 	private void verifyText1() {
@@ -59,6 +40,16 @@ public class TextWithIdTest {
 
 	private void verifyText2() {
 		verify2 = gui.getText2Value();
+	}
+
+	@Override
+	public void createAndShowTestedGui(Display display) {
+		gui = new TextWithIdGui(display);
+		gui.open();
+	}
+
+	@Override
+	public void setup() {
 	}
 
 }
@@ -91,9 +82,15 @@ class TextWithIdGui extends Dialog {
 		composite.setLayout(new GridLayout(3, false));
 
 		textField1 = new Text(parent, SWT.BORDER);
-		textField1.setData(org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY, "textField1");
+		textField1
+				.setData(
+						org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY,
+						"textField1");
 		textField2 = new Text(parent, SWT.BORDER);
-		textField2.setData(org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY, "textField2");
+		textField2
+				.setData(
+						org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY,
+						"textField2");
 
 		return composite;
 	}
