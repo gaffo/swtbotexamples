@@ -11,6 +11,8 @@ public abstract class SWTBotTestBase {
 
     private SWTBot bot;
     private static Display display;
+    
+    public static final String TEST_KEY = "test.key";
 
     public abstract void createAndShowTestedGui(Display display);
 

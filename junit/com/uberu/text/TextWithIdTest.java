@@ -22,9 +22,11 @@ public class TextWithIdTest extends SWTBotTestBase {
 
 	@Test
 	public void testFillingInById() throws Exception {
+		org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY = TEST_KEY;
+		
 		SWTBotText textField1 = getBot().textWithId("textField1");
 		SWTBotText textField2 = getBot().textWithId("textField2");
-		
+
 		textField1.setText("WOOT!");
 		textField2.setText("WOOTS!");
 
@@ -53,14 +55,6 @@ class TextWithIdGui extends Dialog {
 		this(new Shell(display));
 	}
 
-	public String getText1Value() {
-		return textField1.getText();
-	}
-
-	public String getText2Value() {
-		return textField2.getText();
-	}
-
 	protected TextWithIdGui(Shell parentShell) {
 		super(parentShell);
 	}
@@ -72,15 +66,9 @@ class TextWithIdGui extends Dialog {
 		composite.setLayout(new GridLayout(3, false));
 
 		textField1 = new Text(parent, SWT.BORDER);
-		textField1
-				.setData(
-						org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY,
-						"textField1");
+		textField1.setData(TextWithIdTest.TEST_KEY, "textField1");
 		textField2 = new Text(parent, SWT.BORDER);
-		textField2
-				.setData(
-						org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences.DEFAULT_KEY,
-						"textField2");
+		textField2.setData(TextWithIdTest.TEST_KEY, "textField2");
 
 		return composite;
 	}
