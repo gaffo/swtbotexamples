@@ -19,6 +19,7 @@ import org.junit.Test;
 import com.uberu.SWTBotTestBase;
 import com.uberu.matchers.GetTextGetter;
 import com.uberu.matchers.TextEndingWith;
+import com.uberu.matchers.TextMatching;
 import com.uberu.matchers.TextStartingWith;
 
 
@@ -52,11 +53,12 @@ public class LabelsTest extends SWTBotTestBase {
 		Matcher<Label> matcher = allOf(widgetOfType(Label.class), new TextContaining<Label>("will have text", new GetTextGetter()));
 		assertEquals(1, getBot().getFinder().findControls(matcher).size());
 	}
-//	
-//	@Test
-//	public void testLabelMatchingRegex() throws Exception {
-//		
-//	}
+	
+	@Test
+	public void testLabelMatchingRegex() throws Exception {
+		Matcher<Label> matcher = allOf(widgetOfType(Label.class), new TextMatching<Label>("^A.+from$", new GetTextGetter()));
+		assertEquals(1, getBot().getFinder().findControls(matcher).size());
+	}
 //	
 //	@Test
 //	public void testLabelInGroupByContent() throws Exception {
